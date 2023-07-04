@@ -7,7 +7,8 @@ from PIL import Image
 from time import sleep
 
 def findHwnd(h, lParam):
-    if 'Minecraft' in win32gui.GetWindowText(h):
+    title = win32gui.GetWindowText(h)
+    if 'Minecraft' in title and 'Minecraft-Auto-Fisher' not in title:
         global hwnd
         hwnd = h
 
